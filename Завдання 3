@@ -1,0 +1,62 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+struct Worker
+{
+    char name[60];
+    char fam[60];
+    char sname[60];
+    char pos[60];
+    int year;
+
+    void vvod()
+    {
+        cout << "Enter data about 10 employees:" << endl;
+
+        for (int i = 1; i <= 10; i++)
+        {
+            cout << endl << "Fill in the data about " << i << "m employee: " << endl << endl;
+            cout << endl << "Enter Name: ";
+            cin >> name;
+            cout << endl << "Enter Surname: ";
+            cin >> fam;
+            cout << endl << "Enter middle name: ";
+            cin >> sname;
+            cout << endl << "Enter position: ";
+            cin >> pos;
+            cout << endl << "Enter the year of employment: ";
+            cin >> year;
+        }
+    }
+
+    void vivod()
+    {
+        int Ryear = 2010;
+        int stage = 0;
+        int ras = 0;
+        cout << endl << "Enter seniority: ";
+        cin >> stage;
+        for (int i = 1; i <= 10; i++, ras = 0)
+        {
+            ras = Ryear - year;
+            if (stage > ras)
+                cout << "Name: " << name << endl;
+            cout << "Surname: " << fam << endl;
+            cout << "middle name: " << sname << endl;
+            cout << "Position: " << pos << endl;
+            cout << "Year of posting to work: " << year << endl;
+        }
+    }
+};
+
+int main()
+{
+    SetConsoleOutputCP(1251);
+
+    Worker x;
+
+    x.vvod();
+    x.vivod();
+
+}
